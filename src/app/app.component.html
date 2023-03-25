@@ -1,3 +1,12 @@
+<mat-toolbar color="primary">
+<mat-toolbar-row>
+  <div>
+    <a mat-button [routerLink]="'/sorting'">Number sorting</a>
+    <a mat-button [routerLink]="'/capitals'">Capitals</a>
+  </div>
+</mat-toolbar-row>
+</mat-toolbar>
+
 <h1>{{title}} installed on 23 Mar 2023</h1>
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
 <div>
@@ -7,3 +16,4 @@
 <br>
 <div>Currently this site is just for testing purposes</div>
 <div>{{myString}}</div>
+<router-outlet></router-outlet>

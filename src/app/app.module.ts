@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SortingComponent } from './sorting/sorting.component';
+import { CapitalsComponent } from './capitals/capitals.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SortingComponent,
+    CapitalsComponent
   ],
   imports: [
     BrowserModule,
