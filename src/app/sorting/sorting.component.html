@@ -1,1 +1,11 @@
-<p>sorting works!</p>
+<h3 class="instruction">Sort these numbers into order</h3>
+
+<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" [style.background-color]="correctOrder ? 'green' : 'orange'"
+        *ngFor="let number of original" cdkDrag>{{number}}</div>
+
+    <br>
+    <div class="centre" *ngIf="correctOrder">
+        <button mat-raised-button color="warn" (click)="play()">Play</button>
+    </div>
+</div>

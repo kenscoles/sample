@@ -8,11 +8,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample';
-  myString:string = "";
-  update():void {
-    this.myString = "You clicked the button";
-  }
-  clearText():void{
-    this.myString = "";
-  }
 }
