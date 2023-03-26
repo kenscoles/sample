@@ -1,19 +1,21 @@
 .instruction {
     text-align: center;
+    font-size: medium;
+    color: blue;
+    margin-bottom: 50px;
 }
 .centre {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 .example-list {
-    width: 60%;
-    max-width: 60%;
+    width: 80%;
+    max-width: 80%;
     border: solid 1px #ccc;
     min-height: 100px;
     display: flex;
     margin:auto;
-    
-    
     flex-direction: row;
     background: white;
     border-radius: 4px;
@@ -22,7 +24,7 @@
   
   .example-box {
     padding: 20px 10px;
-    border-right: solid 20px #ccc;
+    border-right: solid 15px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
