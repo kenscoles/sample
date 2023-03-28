@@ -55,6 +55,8 @@ export class CapitalsComponent implements OnInit {
     if (this.correctOrder) {
     console.log("correct!");
     }
+    
   }
   //
+  
 }

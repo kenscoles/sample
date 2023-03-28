@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SortingComponent } from './sorting/sorting.component';
 import { CapitalsComponent } from './capitals/capitals.component';
+import { SpellingComponent } from './spelling/spelling.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SortingComponent,
-    CapitalsComponent
+    CapitalsComponent,
+    SpellingComponent
   ],
   imports: [
     BrowserModule,
