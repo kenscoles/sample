@@ -4,30 +4,29 @@ import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
 
 @Component({
-  selector: 'app-spelling',
-  templateUrl: './spelling.component.html',
-  styleUrls: ['./spelling.component.css']
+  selector: 'app-anagrams',
+  templateUrl: './anagrams.component.html',
+  styleUrls: ['./anagrams.component.css']
 })
-export class SpellingComponent implements OnInit {
-  correctOrder: boolean = false;
-
+export class AnagramsComponent implements OnInit{
   constructor(private http: HttpClient, private util: UtilityService) { }
-
   ngOnInit(): void {
-    this.http.get('assets/words.json').subscribe(data => {
-      this.words = data;
-      //console.log(this.words[100]);
+    this.http.get('assets/fruit.json').subscribe(data => {
+      this.fruit = data;
+      //console.log(this.fruit);
       this.prepareData();
     });
   }
-  words: any = [];
+  fruit: any = [];
   myString: string = '';
   jumbled: any = [];
   correct: any = [];
+  correctOrder: boolean = false;
 
   prepareData() {
-    let rand = this.util.getRand(this.words.length); // select a random word
-    this.myString = this.words[rand].data; // get a random word
+    let rand = this.util.getRand(this.fruit.length); // select a random word
+    this.myString = this.fruit[rand].name; // get a random word
+    
     this.correctOrder = false;
     this.myString = this.myString.toLocaleUpperCase(); // turn into upper case
     this.jumbled = [...this.myString]; // make string Array from letters
@@ -74,5 +73,4 @@ export class SpellingComponent implements OnInit {
       }
 
 }
-
 

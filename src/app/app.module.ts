@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SortingComponent } from './sorting/sorting.component';
 import { CapitalsComponent } from './capitals/capitals.component';
 import { SpellingComponent } from './spelling/spelling.component';
+import { AnagramsComponent } from './anagrams/anagrams.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SpellingComponent } from './spelling/spelling.component';
     AppComponent,
     SortingComponent,
     CapitalsComponent,
-    SpellingComponent
+    SpellingComponent,
+    AnagramsComponent
   ],
   imports: [
     BrowserModule,

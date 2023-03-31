@@ -1,0 +1,134 @@
+[
+    {
+        "id": 0,
+        "name": "Apple"
+    },
+    {
+        "id": 1,
+        "name": "Apricot"
+    },
+    {
+        "id": 2,
+        "name": "Avocado"
+    },
+    {
+        "id": 3,
+        "name": "Banana"
+    },
+    {
+        "id": 4,
+        "name": "Blueberry"
+    },
+    {
+        "id": 5,
+        "name": "Cherry"
+    },
+    {
+        "id": 6,
+        "name": "Coconut"
+    },
+    {
+        "id": 7,
+        "name": "Grape"
+    },
+    {
+        "id": 8,
+        "name": "Grapefruit"
+    },
+    {
+        "id": 9,
+        "name": "Fig"
+    },
+    {
+        "id": 10,
+        "name": "Kiwi"
+    },
+    {
+        "id": 11,
+        "name": "Lemon"
+    },
+    {
+        "id": 12,
+        "name": "Lime"
+    },
+    {
+        "id": 13,
+        "name": "Mandarin"
+    },
+    {
+        "id": 14,
+        "name": "Mango"
+    },
+    {
+        "id": 15,
+        "name": "Melon"
+    },
+    {
+        "id": 16,
+        "name": "Nectarine"
+    },
+    {
+        "id": 17,
+        "name": "Orange"
+    },
+    {
+        "id": 18,
+        "name": "Papaya"
+    },
+    {
+        "id": 20,
+        "name": "Peach"
+    },
+    {
+        "id": 21,
+        "name": "Pear"
+    },
+    {
+        "id": 22,
+        "name": "Pineapple"
+    },
+    {
+        "id": 23,
+        "name": "Plum"
+    },
+    {
+        "id": 24,
+        "name": "Pomegranate"
+    },
+    {
+        "id": 25,
+        "name": "Raspberry"
+    },
+    {
+        "id": 26,
+        "name": "Strawberry"
+    },
+    {
+        "id": 27,
+        "name": "Watermelon"
+    },
+    {
+        "id": 28,
+        "name": "Blueberry"
+    },
+    {
+        "id": 29,
+        "name": "Lychee"
+    },
+    {
+        "id": 31,
+        "name": "Jackfruit"
+    },
+    {
+        "id": 33,
+        "name": "Lychee"
+    },
+    {
+        "id": 49,
+        "name": "Langsat"
+    },
+    {
+        "id": 50,
+        "name": "Mango"
+    }
+]
