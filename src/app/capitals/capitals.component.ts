@@ -17,7 +17,7 @@ export class CapitalsComponent implements OnInit {
   correctOrder=false;
 
   ngOnInit(): void {
-    this.http.get('assets/sample.json').subscribe(data => {
+    this.http.get('assets/countries.json').subscribe(data => {
       this.countries = data;
       this.prepareData();
     });

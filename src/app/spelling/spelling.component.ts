@@ -24,6 +24,7 @@ export class SpellingComponent implements OnInit {
   myString: string = '';
   jumbled: any = [];
   correct: any = [];
+  
 
   prepareData() {
     let rand = this.util.getRand(this.words.length); // select a random word
@@ -52,6 +53,18 @@ export class SpellingComponent implements OnInit {
         break;
       }
     }
+    // 2/4
+    this.myString = this.jumbled.join("");
+    this.myString = this.myString.toLocaleLowerCase();
+    console.log(this.myString);
+    this.words.forEach((element: any) => {
+      if(element.data == this.myString){
+        this.correctOrder=true;
+        console.log("YES found a match")
+
+      }
+    });
+    //
     if (this.correctOrder) {
 
     }

@@ -11,22 +11,23 @@ import { UtilityService } from '../utility.service';
 export class AnagramsComponent implements OnInit{
   constructor(private http: HttpClient, private util: UtilityService) { }
   ngOnInit(): void {
-    this.http.get('assets/fruit.json').subscribe(data => {
-      this.fruit = data;
-      //console.log(this.fruit);
+    this.http.get('assets/general.json').subscribe(data => {
+      this.list = data;
+      //console.log(this.list);
       this.prepareData();
     });
   }
-  fruit: any = [];
+  list: any = [];
   myString: string = '';
   jumbled: any = [];
   correct: any = [];
   correctOrder: boolean = false;
+  category: string = '';
 
   prepareData() {
-    let rand = this.util.getRand(this.fruit.length); // select a random word
-    this.myString = this.fruit[rand].name; // get a random word
-    
+    let rand = this.util.getRand(this.list.length); // select a random word
+    this.myString = this.list[rand].name; // get a random word
+    this.category = this.list[rand].type; // get the type of data
     this.correctOrder = false;
     this.myString = this.myString.toLocaleUpperCase(); // turn into upper case
     this.jumbled = [...this.myString]; // make string Array from letters
@@ -43,7 +44,7 @@ export class AnagramsComponent implements OnInit{
   drop(event: CdkDragDrop<string[]>): void {
     this.correctOrder = true;
     moveItemInArray(this.jumbled, event.previousIndex, event.currentIndex);
-    console.log(`first letter: ${this.jumbled[0]}`);
+    //console.log(`first letter: ${this.jumbled[0]}`);
     //
     for (let index = 0; index < this.jumbled.length; index++) {
       if (this.jumbled[index] !== this.correct[index]) {

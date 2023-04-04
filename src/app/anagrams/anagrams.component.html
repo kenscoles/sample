@@ -1,6 +1,6 @@
 <div class="instruction">
     <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
-        find the FRUIT from these letters
+        find the {{category | uppercase}} from these letters 
     </ng-template>
     <ng-template #elseBlock>
         Well done!
