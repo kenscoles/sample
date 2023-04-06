@@ -1,3 +1,4 @@
+<mat-checkbox (change)="includeNegativeNumbers($event)">include negative numbers</mat-checkbox>
 <div class="instruction">
     <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
         Sort these numbers into order (smallest to largest)
@@ -6,7 +7,9 @@
         Well done!
       </ng-template>
 </div>    
-
+<div class="centre" *ngIf="correctOrder">
+    <button mat-raised-button color="warn" (click)="play()">Try again</button>
+</div>
 <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
     <div class="example-box" [style.background-color]="correctOrder ? 'green' : 'orange'"
         *ngFor="let number of original" cdkDrag>{{number}}</div>
@@ -14,8 +17,6 @@
     <br>
 
 </div>
-<div class="centre" *ngIf="correctOrder">
-    <button mat-raised-button color="warn" (click)="play()">Try again</button>
-</div>
+
 
   

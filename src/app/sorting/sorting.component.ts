@@ -1,5 +1,7 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { UtilityService } from '../utility.service';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-sorting',
@@ -7,32 +9,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sorting.component.css']
 })
 export class SortingComponent implements OnInit{
-ngOnInit(): void {
+
+  constructor( private util : UtilityService) { }
+
+  ngOnInit(): void {
   this.play();
 }
+
 //
 correctOrder=false;
-attempts:number = 0;
 myNums:number[] = [];
 original:number[]= [];
+negatives:boolean = false;
 play(){
+
   this.correctOrder=false;
-  this.attempts=0;
   this.myNums=[];
   this.original=[];
   while(this.myNums.length < 6){
-      var r = Math.floor(Math.random() * 100) + 1;
+      if(this.negatives){
+        var r = this.util.generateRandomInteger(-20, 20);
+      }
+      else {
+        var r = this.util.generateRandomInteger(1, 40);
+      }
+      
       if(this.myNums.indexOf(r) === -1) this.myNums.push(r);
   }
   this.original = Array.from(this.myNums); // clone the array
-  
   this.myNums.sort(function(a, b){return a - b}); // return b-a for descending order
   console.log(`original: ${this.original}`);
   console.log(`sorted: ${this.myNums}`);
 }
+includeNegativeNumbers(event:MatCheckboxChange){
+  this.negatives = !this.negatives;
+  this.play();
+}
 //
 drop(event: CdkDragDrop<number[]>): void {
-  this.attempts +=1;
   this.correctOrder = true;
   moveItemInArray(this.original, event.previousIndex, event.currentIndex);
   console.log(`first letter: ${this.myNums[0]}`);
@@ -44,8 +58,6 @@ drop(event: CdkDragDrop<number[]>): void {
     }
   }
   if (this.correctOrder) {
-    console.log("attempts: " + this.attempts)
-    var moves = this.attempts.toString();
     
   }
 

@@ -16,6 +16,10 @@ export class UtilityService {
     }
     else return 1 + Math.floor(num * Math.random());
   }
+
+ generateRandomInteger(min: number, max: number): number {
+    return Math.floor(min + Math.random()*(max - min + 1))
+  }
   // shuffles to any position in new array
   shuffleArray(array: string[]): string[] {
     var m = array.length, t, i;
