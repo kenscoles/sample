@@ -2,19 +2,19 @@
     text-align: center;
     font-size: medium;
     color: blue;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 .centre {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 .example-list {
-    width: 80%;
+    width: 40%;
     align-items: center;
     max-width: 80%;
     border: solid 1px #ccc;
-    min-height: 100px;
+    min-height: 60px;
     display: flex;
     margin:auto;
     flex-direction: row;
@@ -24,7 +24,7 @@
   }
   
   .example-box {
-    padding: 20px 10px;
+    padding: 10px 10px;
     border-right: solid 15px #ccc;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
@@ -34,7 +34,7 @@
     box-sizing: border-box;
     cursor: move;
     background: white;
-    font-size: 2em;
+    font-size:2em; 
     flex-grow: 1;
     flex-basis: 0;
   }
