@@ -10,10 +10,10 @@
     margin-top: 10px;
 }
 .example-list {
-    width: 80%;
+    width: 95%;
     align-items: center;
     justify-content: center;
-    max-width: 80%;
+    max-width: 95%;
     border: solid 1px #ccc;
     min-height: 100px;
     display: flex;
