@@ -1,3 +1,4 @@
+<!---->
 <div class="instruction">
   <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
     match the capitals with their country
@@ -6,11 +7,13 @@
     Well done!
   </ng-template>
 </div>
+
 <div class="centre">
   <button mat-raised-button color="accent" (click)="prepareData()" *ngIf="correctOrder">
     Play again
   </button>
   </div>
+
 <div class="centre">
   <div class="example-container">
     <h2>Country</h2>
@@ -29,4 +32,18 @@
         *ngFor="let item of capitals" cdkDrag>{{item.capital}}</div>
     </div>
   </div>
+</div>
+<div class="centre">
+<mat-form-field color="accent" appearance="fill">
+  <mat-label>choose a continent</mat-label>
+  <mat-select #name (valueChange)="onSelected(name.value)">
+    <mat-option value="Africa">Africa</mat-option>  
+    <mat-option value="Asia">Asia</mat-option>
+    <mat-option value="Europe">Europe</mat-option>
+      <mat-option value="North America">North America</mat-option>
+      <mat-option value="South America">South America</mat-option>
+      <mat-option value="Oceania">Oceania</mat-option>
+      <mat-option value="">World</mat-option>
+  </mat-select>
+</mat-form-field>
 </div>

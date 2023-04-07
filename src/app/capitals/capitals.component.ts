@@ -11,21 +11,28 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 export class CapitalsComponent implements OnInit {
 
   constructor(private http: HttpClient, private util : UtilityService) { }
+  allCountries : any = [];
   countries: any = [];
   names: any = [];
   capitals: any = [];
   correctOrder=false;
+  myContinent:string = "";
 
   ngOnInit(): void {
     this.http.get('assets/countries.json').subscribe(data => {
-      this.countries = data;
+      this.allCountries = data;
       this.prepareData();
     });
   }
 
   prepareData(){
+    this.countries = Array.from(this.allCountries);
     this.correctOrder=false;
     this.util.shuffleArray(this.countries);
+   if (this.myContinent !=="") {
+    this.countries = this.countries.filter((t: { continent: string; })=>t.continent == this.myContinent);////////
+   }
+    
     this.names = this.countries.slice(0, 5);// take first 5
     this.capitals = Array.from(this.names); // clone names array
     this.util.sattoloCycle(this.capitals); // shuffle it
@@ -55,8 +62,12 @@ export class CapitalsComponent implements OnInit {
     if (this.correctOrder) {
     console.log("correct!");
     }
-    
   }
   //
-  
+  onSelected(cont: string) {
+    console.log(cont);
+    this.myContinent = cont;
+    this.prepareData();
+  }
+
 }

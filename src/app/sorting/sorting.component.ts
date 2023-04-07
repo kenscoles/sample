@@ -10,7 +10,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 })
 export class SortingComponent implements OnInit{
 
-  constructor( private util : UtilityService) { }
+  constructor (private util : UtilityService) { }
 
   ngOnInit(): void {
   this.play();
@@ -38,18 +38,18 @@ play(){
   }
   this.original = Array.from(this.myNums); // clone the array
   this.myNums.sort(function(a, b){return a - b}); // return b-a for descending order
-  console.log(`original: ${this.original}`);
-  console.log(`sorted: ${this.myNums}`);
+  //console.log(`original: ${this.original}`);
+  //console.log(`sorted: ${this.myNums}`);
 }
 includeNegativeNumbers(event:MatCheckboxChange){
-  this.negatives = !this.negatives;
+  this.negatives = !this.negatives; // toggle
   this.play();
 }
 //
 drop(event: CdkDragDrop<number[]>): void {
   this.correctOrder = true;
   moveItemInArray(this.original, event.previousIndex, event.currentIndex);
-  console.log(`first letter: ${this.myNums[0]}`);
+  //console.log(`first letter: ${this.myNums[0]}`);
   //
   for (let index = 0; index < this.myNums.length; index++) {
     if (this.myNums[index] !== this.original[index]) {
@@ -57,10 +57,8 @@ drop(event: CdkDragDrop<number[]>): void {
       break;
     }
   }
-  if (this.correctOrder) {
-    
+  if (this.correctOrder) { 
+    // nothing at present   
   }
-
-//
 }
 }

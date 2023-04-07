@@ -1,12 +1,12 @@
 <div class="instruction">
     <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
-        spell a word from these letters
+        Spell a word from these letters. Clue : {{clue}}
     </ng-template>
     <ng-template #elseBlock>
       Well done!
     </ng-template>
   </div>
-  <div class="centre">
+   <div class="centre">
     <button mat-raised-button color="accent" (click)="prepareData()" *ngIf="correctOrder">
       Play again
     </button>

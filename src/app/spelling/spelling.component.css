@@ -2,12 +2,12 @@
     text-align: center;
     font-size: medium;
     color: blue;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .centre {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 .example-list {
     width: 80%;

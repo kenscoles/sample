@@ -24,11 +24,12 @@ export class SpellingComponent implements OnInit {
   myString: string = '';
   jumbled: any = [];
   correct: any = [];
-  
+  clue:string = "";
 
   prepareData() {
     let rand = this.util.getRand(this.words.length); // select a random word
     this.myString = this.words[rand].data; // get a random word
+    this.clue = this.words[rand].description;
     this.correctOrder = false;
     this.myString = this.myString.toLocaleUpperCase(); // turn into upper case
     this.jumbled = [...this.myString]; // make string Array from letters
