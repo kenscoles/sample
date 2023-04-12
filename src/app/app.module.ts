@@ -9,7 +9,7 @@ import { SortingComponent } from './sorting/sorting.component';
 import { CapitalsComponent } from './capitals/capitals.component';
 import { SpellingComponent } from './spelling/spelling.component';
 import { AnagramsComponent } from './anagrams/anagrams.component';
-
+import { TablesComponent } from './tables/tables.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +17,16 @@ import { AnagramsComponent } from './anagrams/anagrams.component';
     SortingComponent,
     CapitalsComponent,
     SpellingComponent,
-    AnagramsComponent
+    AnagramsComponent,
+    TablesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

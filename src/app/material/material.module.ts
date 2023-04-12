@@ -16,14 +16,17 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatCheckboxModule} from '@angular/material/checkbox'
-import {DragDropModule} from '@angular/cdk/drag-drop'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+//import { MatGridListModule } from '@angular/material/grid-list';
+import {MatGridListModule} from '@angular/material/grid-list' 
 @NgModule({
   declarations: [],
   imports: [CommonModule,],
   exports: [MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatButtonModule,
     MatCardModule, MatInputModule, MatTableModule, MatSelectModule, MatTooltipModule,
      MatProgressSpinnerModule, MatBadgeModule, MatDialogModule, MatSliderModule,
-     MatSlideToggleModule, MatFormFieldModule, MatCheckboxModule, DragDropModule]
+     MatSlideToggleModule, MatFormFieldModule, MatCheckboxModule, DragDropModule,MatGridListModule
+   ]
 })
 export class MaterialModule { }

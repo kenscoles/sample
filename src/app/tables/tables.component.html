@@ -1,0 +1,30 @@
+
+<div class="center">
+    <div class="example-button-row">
+        <button mat-raised-button (click)="createTable()">New table</button>
+        <button *ngIf="correct" mat-raised-button (click)="newTry()">Try Another</button>
+    </div>
+</div>
+<div class="example-container">
+    <mat-grid-list gutterSize="0px" cols="1" rowHeight="6:1">
+        <mat-grid-tile>{{myTable}} times table</mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div class="example-container">
+    <mat-grid-list gutterSize="0px" cols="4" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let item of myNumbers"><button mat-raised-button color="primary"
+                (click)="checkAnswer(item)">{{item}}</button></mat-grid-tile>
+
+    </mat-grid-list>
+</div>
+<div class="example-container">
+    <mat-grid-list gutterSize="0px" cols="6" rowHeight="1:1">
+        <mat-grid-tile>{{question}}</mat-grid-tile>
+        <mat-grid-tile>x</mat-grid-tile>
+        <mat-grid-tile>{{myTable}}</mat-grid-tile>
+        <mat-grid-tile>=</mat-grid-tile>
+        <mat-grid-tile>{{answer}}</mat-grid-tile>
+        <mat-grid-tile [ngStyle]="{'color': tileFont}">{{tileText}}</mat-grid-tile>
+    </mat-grid-list>
+</div>
+<h6>for Ben & Ezra</h6>

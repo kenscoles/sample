@@ -1,0 +1,30 @@
+.example-container {
+    width: 20%;
+    margin: auto;
+    justify-content: center;
+    vertical-align: top;
+  }
+  mat-grid-tile {
+    background: lightblue;
+    font-size: 16pt;
+  
+  }
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 20px 8px 0;
+  }
+   
+  .center {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    background-color:grey;
+  }
+  :host {
+    display:block;
+    background-color:rgb(201, 128, 76)
+}
