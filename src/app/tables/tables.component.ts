@@ -20,8 +20,9 @@ export class TablesComponent implements OnInit {
   product: number = 0;
   correct: boolean = false;
   answer: string = '';
-  tileFont: string = 'blue';
+  tileFont: string = 'green';
   tileText: string = '';
+  myIcon:string = "";
 
   createTable() {
     this.myTable = this.util.generateRandomInteger(2, 12);
@@ -55,11 +56,13 @@ export class TablesComponent implements OnInit {
       console.log("YES");
       this.correct = true;
       this.tileFont = "green";
-      this.tileText = "YES";
+      this.myIcon = "emoji_emotions";
+      this.tileText = "Y";
     }
     else {
       this.tileFont = "red";
       this.tileText = "NO";
+      this.myIcon = "mood_bad";
     }
   }
 

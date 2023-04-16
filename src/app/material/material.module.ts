@@ -18,7 +18,6 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-//import { MatGridListModule } from '@angular/material/grid-list';
 import {MatGridListModule} from '@angular/material/grid-list' 
 @NgModule({
   declarations: [],
