@@ -43,6 +43,7 @@ export class TablesComponent implements OnInit {
       this.product = this.myTable * this.question; //calc the answer
       this.tileFont = "blue"; // initialise answer display
       this.tileText = "";
+      this.myIcon = "";
       this.removeQuestion(); // remove current number as it's been used
     }
     else { // if all six questions used
