@@ -1,12 +1,16 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { DragDropModule, CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-spelling',
   templateUrl: './spelling.component.html',
-  styleUrls: ['./spelling.component.css']
+  styleUrls: ['./spelling.component.css'],
+  standalone: true,
+  imports: [DragDropModule, MatButtonModule, NgIf, NgFor]
 })
 export class SpellingComponent implements OnInit {
   correctOrder: boolean = false;

@@ -2,11 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UtilityService } from '../utility.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {NgIf, NgFor} from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
 
 @Component({
   selector: 'app-capitals',
   templateUrl: './capitals.component.html',
-  styleUrls: ['./capitals.component.css']
+  styleUrls: ['./capitals.component.css'],
+  standalone:true,
+  imports: [MatButtonModule, MatInputModule, MatSelectModule,
+     DragDropModule, NgIf, NgFor]
 })
 export class CapitalsComponent implements OnInit {
 
@@ -23,6 +31,7 @@ export class CapitalsComponent implements OnInit {
       this.allCountries = data;
       this.prepareData();
     });
+    
   }
 
   prepareData(){

@@ -5,13 +5,15 @@ import { CapitalsComponent } from './capitals/capitals.component';
 import { SpellingComponent } from './spelling/spelling.component';
 import { AnagramsComponent } from './anagrams/anagrams.component';
 import { TablesComponent } from './tables/tables.component';
+import { StatesComponent } from './states/states.component';
 
 const routes: Routes = [
   {path: 'sorting', component: SortingComponent},
   {path: 'capitals', component: CapitalsComponent},
   {path: 'spelling', component: SpellingComponent},
   {path: 'anagrams', component: AnagramsComponent},
-  {path: 'tables', component: TablesComponent}
+  {path: 'tables', component: TablesComponent},
+  {path: 'states', component: StatesComponent}
 ];
 
 @NgModule({

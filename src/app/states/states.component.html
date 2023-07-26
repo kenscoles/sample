@@ -1,0 +1,34 @@
+
+<div class="instruction">
+    <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
+      match the capitals with their state
+    </ng-template>
+    <ng-template #elseBlock>
+      Well done!
+    </ng-template>
+  </div>
+  
+  <div class="centre">
+    <div class="example-container">
+      <h2>State</h2>
+      <div cdkDropList #countriesList="cdkDropList" [cdkDropListData]="names" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'" *ngFor="let item of names"
+          cdkDrag>{{item.name}}</div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>Capital</h2>
+      <div cdkDropList #capitalsList="cdkDropList" [cdkDropListData]="capitals" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'"
+          *ngFor="let item of capitals" cdkDrag>{{item.capital}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="centre">
+    <button mat-raised-button color="accent" (click)="prepareData()" *ngIf="correctOrder">
+      Play again
+    </button>
+    </div>

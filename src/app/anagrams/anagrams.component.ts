@@ -1,12 +1,16 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { DragDropModule, CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-anagrams',
   templateUrl: './anagrams.component.html',
-  styleUrls: ['./anagrams.component.css']
+  styleUrls: ['./anagrams.component.css'],
+  standalone: true,
+  imports: [CommonModule, DragDropModule, MatButtonModule]
 })
 export class AnagramsComponent implements OnInit{
   constructor(private http: HttpClient, private util: UtilityService) { }

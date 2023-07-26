@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.css']
+  styleUrls: ['./tables.component.css'],
+  standalone: true,
+  imports: [MatGridListModule, MatButtonModule, MatIconModule, CommonModule]
 })
 export class TablesComponent implements OnInit {
   constructor(private util: UtilityService) { }

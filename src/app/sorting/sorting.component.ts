@@ -1,12 +1,17 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatButtonModule } from '@angular/material/button';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-sorting',
   templateUrl: './sorting.component.html',
-  styleUrls: ['./sorting.component.css']
+  styleUrls: ['./sorting.component.css'],
+  standalone: true,
+  imports: [DragDropModule, MatCheckboxModule, MatButtonModule, NgIf, NgFor]
 })
 export class SortingComponent implements OnInit{
 
