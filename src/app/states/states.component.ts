@@ -30,8 +30,9 @@ export class StatesComponent implements OnInit {
     });
   }
   prepareData() {
-    this.myStates = Array.from(this.states);
     this.correctOrder = false;
+    this.myStates = Array.from(this.states);
+    
     this.util.shuffleArray(this.myStates);
 
     this.names = this.myStates.slice(0, 5);// take first 5

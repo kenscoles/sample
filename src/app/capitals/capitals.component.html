@@ -9,9 +9,18 @@
 </div>
 
 <div class="centre">
-  <button mat-raised-button color="accent" (click)="prepareData()" *ngIf="correctOrder">
-    Play again
-  </button>
+  <mat-form-field color="accent" appearance="fill">
+    <mat-label>choose a continent</mat-label>
+    <mat-select #name (valueChange)="onSelected(name.value)">
+      <mat-option value="Africa">Africa</mat-option>  
+      <mat-option value="Asia">Asia</mat-option>
+      <mat-option value="Europe">Europe</mat-option>
+        <mat-option value="North America">North America</mat-option>
+        <mat-option value="South America">South America</mat-option>
+        <mat-option value="Oceania">Oceania</mat-option>
+        <mat-option value="">World</mat-option>
+    </mat-select>
+  </mat-form-field>
   </div>
 
 <div class="centre">
@@ -19,7 +28,7 @@
     <h2>Country</h2>
     <div cdkDropList #countriesList="cdkDropList" [cdkDropListData]="names" class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" [style.background-color]="correctOrder ? 'green' : 'orange'" *ngFor="let item of names"
+      <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'" *ngFor="let item of names"
         cdkDrag>{{item.name}}</div>
     </div>
   </div>
@@ -28,22 +37,14 @@
     <h2>Capital</h2>
     <div cdkDropList #capitalsList="cdkDropList" [cdkDropListData]="capitals" class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" [style.background-color]="correctOrder ? 'green' : 'orange'"
+      <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'"
         *ngFor="let item of capitals" cdkDrag>{{item.capital}}</div>
     </div>
   </div>
 </div>
+
 <div class="centre">
-<mat-form-field color="accent" appearance="fill">
-  <mat-label>choose a continent</mat-label>
-  <mat-select #name (valueChange)="onSelected(name.value)">
-    <mat-option value="Africa">Africa</mat-option>  
-    <mat-option value="Asia">Asia</mat-option>
-    <mat-option value="Europe">Europe</mat-option>
-      <mat-option value="North America">North America</mat-option>
-      <mat-option value="South America">South America</mat-option>
-      <mat-option value="Oceania">Oceania</mat-option>
-      <mat-option value="">World</mat-option>
-  </mat-select>
-</mat-form-field>
-</div>
+  <button mat-raised-button color="accent" (click)="ngOnInit()" *ngIf="correctOrder">
+    Play again
+  </button>
+  </div>
