@@ -30,6 +30,7 @@ export class TablesComponent implements OnInit {
   tileFont: string = 'green';
   tileText: string = '';
   myIcon:string = "";
+  
 
   createTable() {
     this.myTable = this.util.generateRandomInteger(2, 12);
@@ -43,7 +44,8 @@ export class TablesComponent implements OnInit {
   }
 
   newTry() {
-    if (this.myArray.length) { // check whether more questions are left 
+    if (this.myArray.length) { // check whether more questions are left
+      this.util.sattoloCycle(this.myNumbers); ///////////////////////////////////??????????????? 
       this.answer = '?';
       this.question = this.myArray[0];
       this.correct = false;
@@ -58,7 +60,8 @@ export class TablesComponent implements OnInit {
     }
   }
 
-  checkAnswer(num: number) {
+  async checkAnswer(num: number) {
+   // const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
     this.answer = num.toString(); // display the chosen answer
     if (num == this.product) {
       console.log("YES");
@@ -72,12 +75,17 @@ export class TablesComponent implements OnInit {
       this.tileText = "NO";
       this.myIcon = "mood_bad";
     }
+    await this.util.delay(3000)// delay function is in util service
+    if(this.correct) {
+      this.newTry()
+    }
+    
   }
 
   removeQuestion() {
     //var myDeletions = [0];
     this.util.removeArrayValues(this.myArray, [0]);
-    console.log(this.myArray)
+    console.log("questions: ",this.myArray)
   }
   getRandomOrder() { // picks six calculations on the table
     this.myArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
