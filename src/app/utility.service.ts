@@ -61,5 +61,5 @@ var myArray = ['a','b','c','d','e'];
  
      return arr;
    }
-
+   delay = (ms: number) => new Promise(r => setTimeout(r, ms));
 }

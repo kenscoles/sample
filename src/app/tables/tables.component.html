@@ -2,7 +2,9 @@
 <div class="center">
     <div class="example-button-row">
         <button mat-raised-button (click)="createTable()">New table</button>
+        <!-- // delay of 3 sec instead
         <button *ngIf="correct" mat-raised-button (click)="newTry()">Next</button>
+        -->
     </div>
 </div>
 <div class="example-container">
@@ -18,7 +20,7 @@
     </mat-grid-list>
 </div>
 <div class="example-container">
-    <mat-grid-list gutterSize="0px" cols="6" rowHeight="1:1">
+    <mat-grid-list gutterSize="0px" cols="7" rowHeight="1:1">
         <mat-grid-tile>{{question}}</mat-grid-tile>
         <mat-grid-tile>x</mat-grid-tile>
         <mat-grid-tile>{{myTable}}</mat-grid-tile>
@@ -27,6 +29,7 @@
         <mat-grid-tile [ngStyle]="{'color': tileFont}">
             <mat-icon [ngStyle]="{'color': tileFont}"  aria-hidden="false" aria-label="Example home icon" fontIcon={{myIcon}}></mat-icon>
         </mat-grid-tile>
+        <mat-grid-tile>{{6-myArray.length}}/6</mat-grid-tile>
     </mat-grid-list>
 </div>
 <h6>for Ben & Ezra 2023</h6>
