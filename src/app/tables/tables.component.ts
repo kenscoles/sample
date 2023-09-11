@@ -60,7 +60,7 @@ export class TablesComponent implements OnInit {
     }
   }
 
-  async checkAnswer(num: number) {
+  async checkAnswer(num: number): Promise<void> {
    // const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
     this.answer = num.toString(); // display the chosen answer
     if (num == this.product) {

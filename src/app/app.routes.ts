@@ -6,6 +6,11 @@ export const APP_ROUTES: Routes = [
         path: '',
         children: [
             {
+                path: 'mastermind', title: 'mastermind',
+                loadComponent: () => import('./mastermind/mastermind.component').then(c => c.MastermindComponent)
+
+            },
+            {
                 path: 'sorting', title: 'sorting',
                 loadComponent: () => import('./sorting/sorting.component').then(c => c.SortingComponent)
 
