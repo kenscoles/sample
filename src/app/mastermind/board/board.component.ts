@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Board, Guess, Combination } from '../board';
 import { CommonModule } from '@angular/common'; 
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
 
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule]
 })
 export class BoardComponent implements OnInit {
 
