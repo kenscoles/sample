@@ -20,7 +20,7 @@
     <tr *ngIf="!gameWon && !gameLost">
       <td>&nbsp;</td>
       <td *ngFor="let i of numberArray(1,board.fields)">
-        <select [(ngModel)]="combination.items[i-1]">
+        <select size="6" style="width: 60px; font-size:20px; ;" [(ngModel)]="combination.items[i-1]">
           <option *ngFor="let j of numberArray(1,board.colors)">{{j}}</option>
         </select>
       </td>
