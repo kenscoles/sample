@@ -1,13 +1,11 @@
 <table>
     <tr>
-      <th>&nbsp;</th>
       <th>Tries</th>
       <th colspan="4">Combination</th>
       <th>Result</th>
     </tr>
     <!-- iterate over all guesses -->
     <tr *ngFor="let guess of board.guesses; let try = index">
-      <td>&nbsp;</td>
       <td>{{try+1}}</td>
       <td *ngFor="let i of numberArray(1,board.fields)">{{guess.combination.items[i-1]}}</td>
       <td>{{guess.correct}}/{{guess.correctColors}}</td>
