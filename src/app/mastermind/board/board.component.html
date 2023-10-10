@@ -6,7 +6,7 @@
     </tr>
     <!-- iterate over all guesses -->
     <tr *ngFor="let guess of board.guesses; let try = index">
-      <td>{{try+1}}</td>
+      <td style="color:red">{{try+1}}</td>
       <td *ngFor="let i of numberArray(1,board.fields)">{{guess.combination.items[i-1]}}</td>
       <td>{{guess.correct}}/{{guess.correctColors}}</td>
     </tr>
@@ -20,12 +20,12 @@
     <tr *ngIf="!gameWon && !gameLost">
       <td>&nbsp;</td>
       <td *ngFor="let i of numberArray(1,board.fields)">
-        <select size="6" style="width: 60px; font-size:20px; ;" [(ngModel)]="combination.items[i-1]">
+        <select size="6" style="width: 50px; font-size:20px; ;" [(ngModel)]="combination.items[i-1]">
           <option *ngFor="let j of numberArray(1,board.colors)">{{j}}</option>
         </select>
       </td>
       <td>
-        <button  mat-raised-button color="primary" (click)="onGuess()">Guess</button>
+        <button appDebounceClick mat-raised-button color="primary" [debounceTime]="1000" (debounceClick)="onGuess()">Guess</button>
       </td>
     </tr>
     <tr *ngIf="gameLost">

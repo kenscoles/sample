@@ -4,14 +4,15 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select'
+import { MatSelectModule } from '@angular/material/select';
+import { DebounceClickDirective } from 'src/app/debounce-click.directive';
 
 @Component({
   selector: 'board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule]
+  imports: [CommonModule, FormsModule, MatButtonModule, MatInputModule, MatSelectModule, DebounceClickDirective]
 })
 export class BoardComponent implements OnInit {
 
