@@ -37,6 +37,11 @@ export const APP_ROUTES: Routes = [
 
             },
             {
+                path: 'flags', title: 'flags',
+                loadComponent: () => import('./flags/flags.component').then(c => c.FlagsComponent)
+
+            },
+            {
                 path: 'states', title: 'states',
                 loadComponent: () => import('./states/states.component').then(c => c.StatesComponent)
 

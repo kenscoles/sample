@@ -1,0 +1,139 @@
+.centre {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.example-container {
+    width: 200px;
+    height: 400px;
+    max-width: 100%;
+    background-color: rgb(217, 229, 230);
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  }
+  .flag-container {
+    width: 120px;
+    height: 400px;
+    max-width: 100%;
+    background-color: rgb(217, 229, 230);
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  }
+  
+  .country-container {
+    width: 200px;
+    height: 400px;
+    max-width: 100%;
+    background-color: rgb(217, 229, 230);
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  
+  }
+  
+  .example-list {
+    border: solid 1px #ccc;
+    min-height: 300px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .example-box {
+    padding: 21px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    box-sizing: content-box;
+    cursor: move;
+    font-size: 14px;
+  }
+  
+  .country-box {
+    padding: 21px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(255, 255, 255, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    box-sizing: content-box;
+    cursor: move;
+    font-size: 14px;
+  }
+  
+  .image-box {
+    padding: 0px 0px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: center;
+    box-sizing: content-box;
+    cursor: move;
+    font-size: 14px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0 8px 10px 1px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  img {
+    border: 1px solid #555;
+    height: 60px;
+    width: auto;
+  }
+  .btn-group button {
+    margin-top: 10px;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: grey;
+  }
+  mat-form-field {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
