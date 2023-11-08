@@ -29,6 +29,7 @@ export class CapitalsComponent implements OnInit {
   ngOnInit(): void {
     this.http.get('assets/countries.json').subscribe(data => {
       this.allCountries = data;
+      this.allCountries = this.allCountries.filter((t: { include: string; }) => t.include == "y");
       this.prepareData();
     });
     
