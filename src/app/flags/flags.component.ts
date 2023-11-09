@@ -31,6 +31,7 @@ export class FlagsComponent implements OnInit {
       this.allCountries = data;
       this.allCountries = this.allCountries.filter((t: { include: string; }) => t.include == "y");////////
       console.log(this.allCountries)
+      this.correctOrder=true // just at start up
     });
   }
 

@@ -1,11 +1,17 @@
+.instruction {
+  text-align: center;
+  font-size: medium;
+  color: blue;
+  margin-bottom: 5px;
+}
 .centre {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
 .example-container {
-    width: 200px;
-    height: 400px;
+    width: 120px;
+    height: 350px;
     max-width: 100%;
     background-color: rgb(217, 229, 230);
     margin: 0 25px 25px 0;
@@ -14,8 +20,8 @@
     text-align: center;
   }
   .flag-container {
-    width: 120px;
-    height: 400px;
+    width: 110px;
+    height: 350px;
     max-width: 100%;
     background-color: rgb(217, 229, 230);
     margin: 0 25px 25px 0;
@@ -26,7 +32,7 @@
   
   .country-container {
     width: 200px;
-    height: 400px;
+    height: 350px;
     max-width: 100%;
     background-color: rgb(217, 229, 230);
     margin: 0 25px 25px 0;
@@ -115,25 +121,5 @@
     border: 1px solid #555;
     height: 60px;
     width: auto;
-  }
-  .btn-group button {
-    margin-top: 10px;
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    width: 100%; /* Set a width if needed */
-    display: block; /* Make the buttons appear below each other */
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-bottom: none; /* Prevent double borders */
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: grey;
-  }
-  mat-form-field {
-    margin-top: 10px;
-    width: 100%;
   }
   

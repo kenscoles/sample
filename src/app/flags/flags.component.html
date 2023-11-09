@@ -1,3 +1,27 @@
+<div class="instruction">
+    <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
+        match the flags with their country
+    </ng-template>
+    <ng-template #elseBlock>
+        Well done!
+    </ng-template>
+</div>
+<div class="centre">
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>choose a continent</mat-label>
+        <mat-select #name (valueChange)="onSelected(name.value)">
+            <mat-option value="Africa">Africa</mat-option>
+            <mat-option value="Asia">Asia</mat-option>
+            <mat-option value="Europe">Europe</mat-option>
+            <mat-option value="North America">North America</mat-option>
+            <mat-option value="South America">South America</mat-option>
+            <mat-option value="Oceania">Oceania</mat-option>
+            <mat-option value="">World</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button *ngIf="!caps" mat-raised-button color="primary" (click)="showCapitals()">hint</button>
+</div>
+
 <div class="centre">
     <div class="country-container">
         <h2>Country</h2>
@@ -23,24 +47,8 @@
                 *ngFor="let item of myFlags" cdkDrag>{{item.capital}}</div>
         </div>
     </div>
-
-
-    <div class="example-container">
-        <div class="btn-group">
-            <button mat-raised-button color="primary" (click)="setup()">get new flags</button>
-            <button *ngIf="!caps" mat-raised-button color="primary" (click)="showCapitals()">show capitals</button>
-            <mat-form-field color="primary" appearance="fill">
-                <mat-label>choose a continent</mat-label>
-                <mat-select #name (valueChange)="onSelected(name.value)">
-                    <mat-option value="Africa">Africa</mat-option>
-                    <mat-option value="Asia">Asia</mat-option>
-                    <mat-option value="Europe">Europe</mat-option>
-                    <mat-option value="North America">North America</mat-option>
-                    <mat-option value="South America">South America</mat-option>
-                    <mat-option value="Oceania">Oceania</mat-option>
-                    <mat-option value="">World</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
 </div>
+<div class="centre">
+<button mat-raised-button color="primary" (click)="setup()">new flags</button>
+</div>
+
