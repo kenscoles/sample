@@ -22,6 +22,7 @@ export class FlagsComponent implements OnInit {
   correctOrder = false;
   myContinent = ""
   caps: boolean = false;
+  startup = true;
 
   constructor(private util: UtilityService, private http: HttpClient) {
 
@@ -33,9 +34,11 @@ export class FlagsComponent implements OnInit {
       console.log(this.allCountries)
       this.correctOrder=true // just at start up
     });
+  
   }
 
   setup() {
+    this.startup = false // 
     this.caps = false;
     this.correctOrder = false;
     this.countries = Array.from(this.allCountries)

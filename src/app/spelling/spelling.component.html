@@ -1,19 +1,31 @@
-<div class="instruction">
-    <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
+<!-- <div class="instruction">
+    @if (!correctOrder) {
+<ng-template [ngIfElse]="elseBlock">
         Spell a word from these letters. Clue : {{clue}}
     </ng-template>
+}
     <ng-template #elseBlock>
       Well done!
     </ng-template>
+  </div> -->
+  <div class="instruction">
+    @if(!correctOrder){Spell a word from these letters. Clue : {{clue}}}
+    @else {Well done}
   </div>
    <div class="centre">
-    <button mat-raised-button color="accent" (click)="prepareData()" *ngIf="correctOrder">
+    @if (correctOrder) {
+<button mat-raised-button color="accent" (click)="prepareData()">
       Play again
     </button>
+}
     </div>
 <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let letter of jumbled" cdkDrag>{{letter}}</div>
+    @for (letter of jumbled; track letter) {
+  <div class="example-box" cdkDrag>{{letter}}</div>
+}
   </div>
   <div class="centre">
-    <button *ngIf="!correctOrder" mat-raised-button color="warn" (click)="cheat()">Give up</button>
+    @if (!correctOrder) {
+<button mat-raised-button color="warn" (click)="cheat()">Give up</button>
+}
 </div>

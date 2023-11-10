@@ -1,11 +1,6 @@
-<!---->
 <div class="instruction">
-  <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
-    match the capitals with their country
-  </ng-template>
-  <ng-template #elseBlock>
-    Well done!
-  </ng-template>
+  @if(!correctOrder){ match the capitals with their country}
+  @else {Well done}
 </div>
 
 <div class="centre">
@@ -28,8 +23,10 @@
     <h2>Country</h2>
     <div cdkDropList #countriesList="cdkDropList" [cdkDropListData]="names" class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'" *ngFor="let item of names"
+      @for (item of names; track item) {
+  <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'"
         cdkDrag>{{item.name}}</div>
+}
     </div>
   </div>
 
@@ -37,14 +34,18 @@
     <h2>Capital</h2>
     <div cdkDropList #capitalsList="cdkDropList" [cdkDropListData]="capitals" class="example-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'"
-        *ngFor="let item of capitals" cdkDrag>{{item.capital}}</div>
+      @for (item of capitals; track item) {
+  <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'light-blue'"
+        cdkDrag>{{item.capital}}</div>
+}
     </div>
   </div>
 </div>
 
 <div class="centre">
-  <button mat-raised-button color="accent" (click)="ngOnInit()" *ngIf="correctOrder">
+  @if (correctOrder) {
+<button mat-raised-button color="accent" (click)="ngOnInit()">
     Play again
   </button>
+}
   </div>

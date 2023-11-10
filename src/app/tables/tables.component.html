@@ -14,8 +14,10 @@
 </div>
 <div class="example-container">
     <mat-grid-list gutterSize="5px" cols="4" rowHeight="1:1">
-        <mat-grid-tile *ngFor="let item of myNumbers"><button mat-raised-button color="primary"
+        @for (item of myNumbers; track item) {
+  <mat-grid-tile><button mat-raised-button color="primary"
                 (click)="checkAnswer(item)">{{item}}</button></mat-grid-tile>
+}
 
     </mat-grid-list>
 </div>

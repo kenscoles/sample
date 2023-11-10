@@ -1,10 +1,7 @@
 <div class="instruction">
-    <ng-template [ngIf]="!correctOrder" [ngIfElse]="elseBlock">
-        match the flags with their country
-    </ng-template>
-    <ng-template #elseBlock>
-        Well done!
-    </ng-template>
+    @if(!correctOrder){ match the flags with their country}
+    @else if (startup) {match the flags with their country}
+    @else {Well done}
 </div>
 <div class="centre">
     <mat-form-field color="accent" appearance="fill">
@@ -19,7 +16,9 @@
             <mat-option value="">World</mat-option>
         </mat-select>
     </mat-form-field>
-    <button *ngIf="!caps" mat-raised-button color="primary" (click)="showCapitals()">hint</button>
+    @if (!caps) {
+    <button mat-raised-button color="primary" (click)="showCapitals()">hint</button>
+    }
 </div>
 
 <div class="centre">
@@ -27,28 +26,35 @@
         <h2>Country</h2>
         <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="myCountries" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'grey'"
-                *ngFor="let item of myCountries" cdkDrag>{{item.name}}</div>
+            @for (item of myCountries; track item) {
+            <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'grey'" cdkDrag>{{item.name}}
+            </div>
+            }
         </div>
     </div>
     <div class="flag-container">
         <h2>Flag</h2>
         <div cdkDropList #flaglist="cdkDropList" [cdkDropListData]="myFlags" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="image-box" [style.background-color]="correctOrder ? 'pink' : 'grey'"
-                *ngFor="let item of myFlags" cdkDrag><img [src]=item.url></div>
+            @for (item of myFlags; track item) {
+            <div class="image-box" [style.background-color]="correctOrder ? 'pink' : 'grey'" cdkDrag><img
+                    [src]=item.url></div>
+            }
         </div>
     </div>
-    <div class="example-container" *ngIf="caps">
+    @if (caps) {
+    <div class="example-container">
         <h2>Capital</h2>
         <div cdkDropList #capList="cdkDropList" [cdkDropListData]="myCountries" class="example-list"
             (cdkDropListDropped)="drop($event)">
-            <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'grey'"
-                *ngFor="let item of myFlags" cdkDrag>{{item.capital}}</div>
+            @for (item of myFlags; track item) {
+            <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'grey'" cdkDrag>{{item.capital}}
+            </div>
+            }
         </div>
     </div>
+    }
 </div>
 <div class="centre">
-<button mat-raised-button color="primary" (click)="setup()">new flags</button>
+    <button mat-raised-button color="primary" (click)="setup()">new flags</button>
 </div>
-
