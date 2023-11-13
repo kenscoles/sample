@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { DebounceClickDirective } from 'src/app/debounce-click.directive';
+import { UtilityService } from 'src/app/utility.service';
 
 @Component({
   selector: 'board',
@@ -46,7 +47,7 @@ export class BoardComponent implements OnInit {
   count = 0;
 
 
-  constructor() { }
+  constructor(public util:UtilityService) { }
 
   ngOnInit(): void {
     console.log("board view created")
@@ -193,7 +194,7 @@ export class BoardComponent implements OnInit {
    * Creates an array containing a sequence of numbers.
    * This can be used in a template to realize a
    * for i=number to number loop
-   */
+  
   numberArray(minValue: number, maxValue: number): number[] {
     var result: number[] = [];
     for (let i = minValue; i <= maxValue; i++) {
@@ -201,6 +202,7 @@ export class BoardComponent implements OnInit {
     }
     return result;
   }
+   */
 // utility for removal of correct positioned guesses from arrays
   removeArrayValues<T>(arr:Array<T>, valArray:Array<number>): T[] {
     valArray = valArray.sort();

@@ -3,6 +3,8 @@ import { UtilityService } from '../utility.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 
 
@@ -11,13 +13,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './tables.component.html',
   styleUrls: ['./tables.component.css'],
   standalone: true,
-  imports: [MatGridListModule, MatButtonModule, MatIconModule, CommonModule]
+  imports: [MatGridListModule, MatButtonModule, MatSelectModule,
+    MatFormFieldModule, MatIconModule, CommonModule]
 })
 export class TablesComponent implements OnInit {
-  constructor(private util: UtilityService) { }
+
+  constructor(public util: UtilityService) { }
 
   ngOnInit(): void {
-    this.createTable();
+    this.createRandomTable();
   }
 
   myNumbers: number[] = [];
@@ -29,11 +33,16 @@ export class TablesComponent implements OnInit {
   answer: string = '';
   tileFont: string = 'green';
   tileText: string = '';
-  myIcon:string = "";
-  
+  myIcon: string = "";
 
-  createTable() {
+
+  createRandomTable() {
     this.myTable = this.util.generateRandomInteger(2, 12);
+    this.buildTable()
+  }
+
+  buildTable() {
+
     this.myNumbers = [];
     for (var i = 1; i < 13; i++) {
       this.myNumbers.push(i * this.myTable);
@@ -56,12 +65,12 @@ export class TablesComponent implements OnInit {
       this.removeQuestion(); // remove current number as it's been used
     }
     else { // if all six questions used
-      this.createTable(); // pick another random table
+      this.createRandomTable(); // pick another random table
     }
   }
 
   async checkAnswer(num: number): Promise<void> {
-   // const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
+    // const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
     this.answer = num.toString(); // display the chosen answer
     if (num == this.product) {
       console.log("YES");
@@ -76,20 +85,25 @@ export class TablesComponent implements OnInit {
       this.myIcon = "mood_bad";
     }
     await this.util.delay(3000)// delay function is in util service
-    if(this.correct) {
+    if (this.correct) {
       this.newTry()
     }
-    
+
   }
 
   removeQuestion() {
     //var myDeletions = [0];
     this.util.removeArrayValues(this.myArray, [0]);
-    console.log("questions: ",this.myArray)
+    console.log("questions: ", this.myArray)
   }
   getRandomOrder() { // picks six calculations on the table
     this.myArray = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     this.util.sattoloCycle(this.myArray); // shuffle
     this.myArray = this.myArray.slice(0, 6);// take first six
+  }
+  onSelected(num: number) {
+    this.myTable = num;
+    this.buildTable()
+
   }
 }

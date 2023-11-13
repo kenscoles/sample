@@ -62,4 +62,16 @@ var myArray = ['a','b','c','d','e'];
      return arr;
    }
    delay = (ms: number) => new Promise(r => setTimeout(r, ms));
+     /**
+   * Creates an array containing a sequence of numbers.
+   * This can be used in a template to realize a
+   * for i=number to number loop
+   */
+  numberArray(minValue: number, maxValue: number): number[] {
+    var result: number[] = [];
+    for (let i = minValue; i <= maxValue; i++) {
+      result.push(i);
+    }
+    return result;
+  }
 }
