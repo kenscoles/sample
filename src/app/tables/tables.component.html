@@ -8,7 +8,7 @@
         <mat-form-field style="width:200px" color="primary" appearance="fill">
             <mat-label>Choose a table</mat-label>
             <mat-select #number (valueChange)="onSelected(number.value) " >
-                @for (j of this.util.numberArray(1,12); track j) {
+                @for (j of this.util.numberArray(2,15); track j) {
           <mat-option [value]="j">{{j}}</mat-option>
         }
             </mat-select>
