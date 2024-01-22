@@ -31,7 +31,7 @@ play(){
   this.correctOrder=false;
   this.myNums=[];
   this.original=[];
-  while(this.myNums.length < 6){
+  while(this.myNums.length < 8){
       if(this.negatives){
         var r = this.util.generateRandomInteger(-20, 20);
       }

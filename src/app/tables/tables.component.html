@@ -1,18 +1,17 @@
-
 <div class="center">
     <div class="example-button-row">
-        <button mat-raised-button (click)="createRandomTable()">Random table</button>
+        <button mat-raised-button color="primary" (click)="createRandomTable()">Random table</button>
         <!-- // delay of 3 sec instead
         <button *ngIf="correct" mat-raised-button (click)="newTry()">Next</button>
         -->
         <mat-form-field style="width:200px" color="primary" appearance="fill">
             <mat-label>Choose a table</mat-label>
-            <mat-select #number (valueChange)="onSelected(number.value) " >
+            <mat-select #number (valueChange)="onSelected(number.value) ">
                 @for (j of this.util.numberArray(2,15); track j) {
-          <mat-option [value]="j">{{j}}</mat-option>
-        }
+                <mat-option [value]="j">{{j}}</mat-option>
+                }
             </mat-select>
-        </mat-form-field>    
+        </mat-form-field>
     </div>
 </div>
 <div class="example-container">
@@ -23,9 +22,9 @@
 <div class="example-container">
     <mat-grid-list gutterSize="5px" cols="4" rowHeight="1:1">
         @for (item of myNumbers; track item) {
-  <mat-grid-tile><button mat-raised-button color="primary"
+        <mat-grid-tile><button mat-raised-button color="primary"
                 (click)="checkAnswer(item)">{{item}}</button></mat-grid-tile>
-}
+        }
 
     </mat-grid-list>
 </div>
@@ -37,11 +36,11 @@
         <mat-grid-tile>=</mat-grid-tile>
         <mat-grid-tile>{{answer}}</mat-grid-tile>
         <mat-grid-tile [ngStyle]="{'color': tileFont}">
-            <mat-icon [ngStyle]="{'color': tileFont}"  aria-hidden="false" aria-label="Example home icon" fontIcon={{myIcon}}></mat-icon>
+            <mat-icon [ngStyle]="{'color': tileFont}" aria-hidden="false" aria-label="Example home icon"
+                fontIcon={{myIcon}}></mat-icon>
         </mat-grid-tile>
         <mat-grid-tile>{{6-myArray.length}}/6</mat-grid-tile>
     </mat-grid-list>
 </div>
-<h6>for Ben & Ezra 2023</h6>
-
-
+<br>
+<h3 style="text-align: center;">for Ben & Ezra 2024</h3>

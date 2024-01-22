@@ -1,6 +1,7 @@
 .instruction {
     text-align: center;
     font-size: medium;
+    font-family: Verdana;
     color: blue;
     margin-bottom: 5px;
 }
@@ -16,6 +17,7 @@
     display: inline-block;
     vertical-align: top;
     text-align: center;
+    font-family: Verdana;
   }
   
   .example-list {

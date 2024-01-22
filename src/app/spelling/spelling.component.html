@@ -1,13 +1,4 @@
-<!-- <div class="instruction">
-    @if (!correctOrder) {
-<ng-template [ngIfElse]="elseBlock">
-        Spell a word from these letters. Clue : {{clue}}
-    </ng-template>
-}
-    <ng-template #elseBlock>
-      Well done!
-    </ng-template>
-  </div> -->
+
   <div class="instruction">
     @if(!correctOrder){Spell a word from these letters. Clue : {{clue}}}
     @else {Well done}
@@ -29,3 +20,5 @@
 <button mat-raised-button color="warn" (click)="cheat()">Give up</button>
 }
 </div>
+<br><br>
+<p>For Ben and Ezra</p>

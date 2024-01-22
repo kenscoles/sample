@@ -1,5 +1,6 @@
+
 .example-container {
-    width: 60%;
+    width: 30%;
     margin: auto;
     justify-content: center;
     vertical-align: top;
@@ -8,7 +9,6 @@
     background: lightblue;
     font-size: 16pt;
     
-  
   }
   .example-button-row {
     display: table-cell;
@@ -20,11 +20,29 @@
   }
    
   .center {
-    margin: auto;
-    width: 70%;
-    padding: 10px;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center;
     background-color:grey;
+    display: block;
   }
   .mat-icon {
     font-size: 25px;
+  }
+  /*/* On screens that are 700px wide or less*/
+  @media all and (max-width: 700px){
+    .example-container {
+      width: 75%;
+    }
+    .center {
+      width: 75%;
+    }
+  }
+  @media all and (max-width: 450px){
+    .example-container {
+      width: 90%;
+    }
+    .center {
+      width: 90%;
+    }
   }

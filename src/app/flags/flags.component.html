@@ -5,7 +5,7 @@
 </div>
 <div class="centre">
     <mat-form-field color="accent" appearance="fill">
-        <mat-label>choose a continent</mat-label>
+        <mat-label>continent</mat-label>
         <mat-select #name (valueChange)="onSelected(name.value)">
             <mat-option value="Africa">Africa</mat-option>
             <mat-option value="Asia">Asia</mat-option>
@@ -16,9 +16,11 @@
             <mat-option value="">World</mat-option>
         </mat-select>
     </mat-form-field>
+    <button mat-raised-button color="primary" (click)="setup()">new flags</button>
     @if (!caps) {
-    <button mat-raised-button color="primary" (click)="showCapitals()">hint</button>
+    <button mat-raised-button color="primary" (click)="showCapitals()">show capitals</button>
     }
+    
 </div>
 
 <div class="centre">
@@ -46,7 +48,7 @@
     <div class="example-container">
         <h2>Capital</h2>
         <div cdkDropList #capList="cdkDropList" [cdkDropListData]="myCountries" class="example-list"
-            (cdkDropListDropped)="drop($event)">
+            >
             @for (item of myFlags; track item) {
             <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'grey'" cdkDrag>{{item.capital}}
             </div>
@@ -54,7 +56,4 @@
         </div>
     </div>
     }
-</div>
-<div class="centre">
-    <button mat-raised-button color="primary" (click)="setup()">new flags</button>
 </div>
