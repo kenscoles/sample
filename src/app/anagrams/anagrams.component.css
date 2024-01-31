@@ -10,7 +10,7 @@
     margin-top: 10px;
 }
 .example-list {
-    width: 95%;
+    width: 40%;
     align-items: center;
     justify-content: center;
     max-width: 95%;
@@ -25,13 +25,12 @@
   }
   
   .example-box {
-    padding: 20px 10px;
+    padding: 10px 10px;
     border-right: solid 2px #ccc;
     border-left: solid 2px  #ccc;
     border-top: solid 2px  #ccc;
     border-bottom: solid 2px  #ccc;
-    color:green;
-    background-color: blueviolet;
+    color:rgb(15, 8, 109);
     display: flex;
     max-width: 50px;
     flex-direction: row;
@@ -39,8 +38,8 @@
     justify-content:center;
     box-sizing: border-box;
     cursor: move;
-    background: white;
-    font-size: 3em;
+    background: yellow;
+    font-size: 12pt;
     flex-grow: 1;
     flex-basis: 0;
   }
@@ -68,4 +67,19 @@
     display: flex;
   justify-content: center;
   
+  }
+  /*/* On screens that are 700px wide or less*/
+  @media all and (max-width: 700px){
+    .example-list {
+      width: 75%;
+      margin-top: 15%;
+    }
+   
+  }
+  @media all and (max-width: 450px){
+    .example-list {
+      width: 90%;
+      margin-top: 10%;
+    }
+   
   }

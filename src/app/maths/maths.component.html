@@ -1,0 +1,22 @@
+<div class="example-container">
+    <mat-grid-list cols="6" rowHeight="1:1">
+        @for (item of question; track item) {
+        <mat-grid-tile> {{item.a}} </mat-grid-tile>
+        <mat-grid-tile> {{item.symbol}} </mat-grid-tile>
+        <mat-grid-tile> {{item.b}} </mat-grid-tile>
+        <mat-grid-tile> = </mat-grid-tile>
+        <mat-grid-tile> <input (keyup.enter)="showArray()" id="answer" type="text" inputmode="numeric"
+                [(ngModel)]="item.answer" size="4"></mat-grid-tile>
+        <mat-grid-tile><mat-icon [ngStyle]="{'color': item.colour}" aria-hidden="false" aria-label="smiley icon"
+                fontIcon={{item.icon}}></mat-icon></mat-grid-tile>
+        }
+    </mat-grid-list>
+</div>
+<div style="text-align: center; margin-top: 10px;">
+    @if(correct < 6) {
+        <button mat-raised-button color="primary" (click)="showArray()">check answers</button>
+        }
+    @if (correct==6) {
+        <button mat-raised-button color="primary" (click)="test()">WELL DONE! More questions</button>
+        }
+</div>

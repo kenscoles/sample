@@ -15,7 +15,11 @@ export const APP_ROUTES: Routes = [
                 loadComponent: () => import('./sorting/sorting.component').then(c => c.SortingComponent)
 
             },
+            {
+                path: 'maths', title: 'maths',
+                loadComponent: () => import('./maths/maths.component').then(c => c.MathsComponent)
 
+            },
             {
                 path: 'capitals', title: 'capitals',
                 loadComponent: () => import('./capitals/capitals.component').then(c => c.CapitalsComponent)

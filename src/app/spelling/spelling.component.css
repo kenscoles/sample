@@ -12,14 +12,14 @@
 }
 
 .example-list {
-  width: 80%;
+  width: 40%;
   align-items: center;
   justify-content: center;
-  max-width: 80%;
+  max-width: 95%;
   border: solid 1px #ccc;
   min-height: 100px;
   display: flex;
-  margin: auto;
+  margin:auto;
   flex-direction: row;
   background: white;
   border-radius: 4px;
@@ -27,26 +27,24 @@
 }
 
 .example-box {
-  padding: 20px 10px;
+  padding: 10px 10px;
   border-right: solid 2px #ccc;
-  border-left: solid 2px #ccc;
-  border-top: solid 2px #ccc;
-  border-bottom: solid 2px #ccc;
-  color: green;
-  background-color: blueviolet;
+  border-left: solid 2px  #ccc;
+  border-top: solid 2px  #ccc;
+  border-bottom: solid 2px  #ccc;
+  color:rgb(15, 8, 109);
   display: flex;
   max-width: 50px;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
   box-sizing: border-box;
   cursor: move;
-  background: white;
-  font-size: 3em;
+  background: yellow;
+  font-size: 12pt;
   flex-grow: 1;
   flex-basis: 0;
 }
-
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 4px;
@@ -73,13 +71,21 @@
 }
 
 p {
-  background-color: lightgreen;
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-  p {
-    background-color: lightblue;
-    font-size: 20pt;
+/*/* On screens that are 700px wide or less*/
+@media all and (max-width: 700px){
+  .example-list {
+    width: 75%;
+    margin-top: 15%;
   }
+ 
+}
+@media all and (max-width: 450px){
+  .example-list {
+    width: 90%;
+    margin-top: 10%;
+  }
+ 
 }

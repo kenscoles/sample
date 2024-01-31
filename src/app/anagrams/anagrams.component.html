@@ -2,13 +2,7 @@
     @if(!correctOrder){ find the {{category | uppercase}} from these letters}
     @else {Well done}
 </div>
-<div class="centre">
-    @if (correctOrder) {
-<button mat-raised-button color="accent" (click)="prepareData()">
-        Play again
-    </button>
-}
-</div>
+
 <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
     @for (letter of jumbled; track letter) {
   <div class="example-box" cdkDrag>{{letter}}</div>
@@ -17,7 +11,14 @@
 
 <br>
 <div class="centre">
+    @if (correctOrder) {
+<button mat-raised-button color="primary" (click)="prepareData()">
+        Play again
+    </button>
+}
+</div>
+<div class="centre">
     @if (!correctOrder) {
-<button mat-raised-button color="warn" (click)="cheat()">Give up</button>
+<button mat-raised-button color="primary" (click)="cheat()">Give up</button>
 }
 </div>
