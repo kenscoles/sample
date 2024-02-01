@@ -29,8 +29,13 @@ export class SpellingComponent implements OnInit {
   jumbled: any = [];
   correct: any = [];
   clue:string = "";
+  cheated = false;
 
   prepareData() {
+    this.cheated = false;
+    this.correctOrder = false;
+    this.jumbled = [];
+    this.correct = [];
     let rand = this.util.getRand(this.words.length); // select a random word
     this.myString = this.words[rand].data; // get a random word
     this.clue = this.words[rand].description;
@@ -75,7 +80,8 @@ export class SpellingComponent implements OnInit {
     }
   }
       //////////////////// this is only really for display purposes to reveal answer gradually
-      async cheat(): Promise<void> { 
+      async cheat(): Promise<void> {
+        this.cheated = true; 
         return new Promise<void>(async (resolve) => {
           const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
           for (let index = 0; index < this.correct.length; index++) { // go through each letter

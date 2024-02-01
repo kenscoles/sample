@@ -40,7 +40,6 @@
   justify-content:center;
   box-sizing: border-box;
   cursor: move;
-  background: yellow;
   font-size: 12pt;
   flex-grow: 1;
   flex-basis: 0;

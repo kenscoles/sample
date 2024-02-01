@@ -1,25 +1,25 @@
+<div class="instruction">
+  @if(!correctOrder){Spell a word from these letters. Clue : {{clue}}}
+  @else if(cheated) {You work it out next time!}
+  @else {Well done!}
+</div>
 
-  <div class="instruction">
-    @if(!correctOrder){Spell a word from these letters. Clue : {{clue}}}
-    @else {Well done}
-  </div>
- 
 <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
-    @for (letter of jumbled; track letter) {
-  <div class="example-box" cdkDrag>{{letter}}</div>
-}
-  </div>
-  <div class="centre">
-    @if (!correctOrder) {
-<button mat-raised-button color="primary" (click)="cheat()">Give up</button>
-}
+  @for (letter of jumbled; track letter) {
+  <div class="example-box" [style.background-color]="correctOrder ?  'pink' : 'yellow'" cdkDrag>{{letter}}</div>
+  }
+</div>
+<div class="centre">
+  @if (!correctOrder) {
+  <button mat-raised-button color="primary" (click)="cheat()">Give up</button>
+  }
 </div>
 <div class="centre">
   @if (correctOrder) {
-<button mat-raised-button color="primary" (click)="prepareData()">
+  <button mat-raised-button color="primary" (click)="prepareData()">
     Play again
   </button>
-}
-  </div>
+  }
+</div>
 <br><br>
 <p>For Ben and Ezra 2024</p>

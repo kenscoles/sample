@@ -27,8 +27,13 @@ export class AnagramsComponent implements OnInit{
   correct: any = [];
   correctOrder: boolean = false;
   category: string = '';
+  cheated = false;
 
   prepareData() {
+    this.cheated = false;
+    this.correctOrder = false;
+    this.jumbled = [];
+    this.correct = [];
     let rand = this.util.getRand(this.list.length); // select a random word
     this.myString = this.list[rand].name; // get a random word
     this.category = this.list[rand].type; // get the type of data
@@ -36,7 +41,7 @@ export class AnagramsComponent implements OnInit{
     this.myString = this.myString.toLocaleUpperCase(); // turn into upper case
     this.jumbled = [...this.myString]; // make string Array from letters
     this.correct = Array.from(this.jumbled); // clone the array
-    this.jumbled.sort(); // sort alphabetically
+    //this.jumbled.sort(); // sort alphabetically
     this.myString = this.jumbled.join("");
     let test = this.correct.join("");
     if (this.myString == test) { // if word has letters in alph order
@@ -62,6 +67,7 @@ export class AnagramsComponent implements OnInit{
   }
       //////////////////// this is only really for display purposes to reveal answer gradually
       async cheat(): Promise<void> { 
+        this.cheated = true;
         return new Promise<void>(async (resolve) => {
           const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
           for (let index = 0; index < this.correct.length; index++) { // go through each letter

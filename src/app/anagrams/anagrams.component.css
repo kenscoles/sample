@@ -25,11 +25,11 @@
   }
   
   .example-box {
-    padding: 10px 10px;
-    border-right: solid 2px #ccc;
-    border-left: solid 2px  #ccc;
-    border-top: solid 2px  #ccc;
-    border-bottom: solid 2px  #ccc;
+    padding: 5px 5px;
+    border-right: solid 1px #ccc;
+    border-left: solid 1px  #ccc;
+    border-top: solid 1ch  #ccc;
+    border-bottom: solid 1cqi  #ccc;
     color:rgb(15, 8, 109);
     display: flex;
     max-width: 50px;
@@ -38,7 +38,6 @@
     justify-content:center;
     box-sizing: border-box;
     cursor: move;
-    background: yellow;
     font-size: 12pt;
     flex-grow: 1;
     flex-basis: 0;
