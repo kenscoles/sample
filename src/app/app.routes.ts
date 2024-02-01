@@ -46,11 +46,6 @@ export const APP_ROUTES: Routes = [
 
             },
             {
-                path: 'resizing', title: 'resizing',
-                loadComponent: () => import('./resizing/resizing.component').then(c => c.ResizingComponent)
-
-            },
-            {
                 path: 'menu', title: 'menu',
                 loadComponent: () => import('./menu/menu.component').then(c => c.MenuComponent)
 
