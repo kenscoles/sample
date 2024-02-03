@@ -114,7 +114,7 @@ export class MathsComponent implements OnInit {
     console.log("array:", this.question)
     this.correct = 0; // reset counter
     for (var i = 0; i < 6; i++) {
-      if(this.question[i].answer == this.question[i].c.toString()){ // correct answer
+      if(parseInt(this.question[i].answer,10) == this.question[i].c){ // correct answer
         this.question[i].icon = "emoji_emotions"
         this.question[i].colour = "green"
         this.correct +=1;
