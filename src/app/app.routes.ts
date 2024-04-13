@@ -16,8 +16,8 @@ export const APP_ROUTES: Routes = [
 
             },
             {
-                path: 'maths', title: 'maths',
-                loadComponent: () => import('./maths/maths.component').then(c => c.MathsComponent)
+                path: 'maths2', title: 'maths2',
+                loadComponent: () => import('./maths2/maths2.component').then(c => c.Maths2Component)
 
             },
             {
