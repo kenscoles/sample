@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { UtilityService } from '../utility.service';
+import { UtilityService } from '../../shared/services/utility.service';
 import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';

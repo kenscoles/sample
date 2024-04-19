@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { DebounceClickDirective } from 'src/app/debounce-click.directive';
-import { UtilityService } from 'src/app/utility.service';
-import { FillPipe } from 'src/app/fill.pipe';
+import { DebounceClickDirective } from 'src/app/shared/directives/debounce-click.directive';
+import { UtilityService } from 'src/app/shared/services/utility.service';
+import { FillPipe } from 'src/app/shared/pipes/fill.pipe';
 
 @Component({
   selector: 'board',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UtilityService } from '../utility.service';
+import { UtilityService } from '../../shared/services/utility.service';
 import { HttpClient } from '@angular/common/http';
 import { CdkDragDrop, moveItemInArray, CdkDropList, CdkDrag } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
