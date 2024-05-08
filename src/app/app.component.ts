@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterOutlet , Router} from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { StateService } from './shared/services/state.service';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
   constructor(private router:Router){
 
   }
+
+  state = inject(StateService)
+  hideToolbar = this.state.isMenu
+  
   ngOnInit(): void {
     this.router.navigate(['/menu'])
   }
