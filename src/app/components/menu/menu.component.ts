@@ -19,11 +19,12 @@ export class MenuComponent implements OnInit {
 
   constructor(private responsive: BreakpointObserver,
   ) {
-    this.state.isMenu.set(true);
+    this.state.showMenuButton.set(false) // hides the app comp toolbar
     const destroyRef = inject(DestroyRef);
-    // register a destroy callback
-    destroyRef.onDestroy(() =>
-    this.state.isMenu.set(false));
+    destroyRef.onDestroy(() => // register a destroy callback
+    this.state.showMenuButton.set(true) // shows app comp toolbar when menu closes
+    );
+    
   }
 
   ngOnInit(): void {

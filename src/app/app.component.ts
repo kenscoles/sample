@@ -12,12 +12,9 @@ import { StateService } from './shared/services/state.service';
 })
 export class AppComponent implements OnInit {
   
-  constructor(private router:Router){
-
-  }
+  constructor(private router:Router){}
 
   state = inject(StateService)
-  hideToolbar = this.state.isMenu
   
   ngOnInit(): void {
     this.router.navigate(['/menu'])
