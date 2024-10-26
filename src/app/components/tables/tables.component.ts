@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UtilityService } from '../../shared/services/utility.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from '@angular/common'; 
+import { StateService } from 'src/app/shared/services/state.service';
 
 
 @Component({
@@ -18,12 +19,13 @@ import { CommonModule } from '@angular/common';
 })
 export class TablesComponent implements OnInit {
 
-  constructor(public util: UtilityService) { }
+  constructor() {}
 
   ngOnInit(): void {
     this.createRandomTable();
   }
-
+  public util = inject(UtilityService)
+   state = inject(StateService)
   myNumbers: number[] = [];
   myArray: number[] = [];
   myTable: number = 0;

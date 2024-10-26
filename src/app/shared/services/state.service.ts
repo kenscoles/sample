@@ -5,7 +5,11 @@ import { Injectable, signal } from '@angular/core';
 })
 export class StateService {
 
-  constructor() { }
+  constructor() {
+    console.log("State Service started")
+   }
  
   showMenuButton = signal<boolean>(false) //  ie the button on app component toolbar
+  mobile = signal<boolean>(false)
+  
 }

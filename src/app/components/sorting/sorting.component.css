@@ -1,8 +1,11 @@
 .instruction {
-    text-align: center;
+  margin: auto;  
+  text-align: center;
     font-size: medium;
     color: blue;
     margin-bottom: 10px;
+    width: 90%;
+    height: 50px;
 }
 .centre {
     display: flex;

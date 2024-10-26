@@ -5,6 +5,7 @@
     list-style: none;
     margin: 0; 
     background:blue;
+    color: bisque;
   }
   
   .navigation a {
@@ -26,7 +27,8 @@
       text-align: center; 
       padding: 10px;
       border-top: 1px solid rgba(255, 255, 255,0.3); 
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      background:blue; 
     }
     .navigation li:last-of-type a {
       border-bottom: none;

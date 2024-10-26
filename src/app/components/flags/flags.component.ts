@@ -54,7 +54,7 @@ export class FlagsComponent implements OnInit {
         {
           "name": this.countries[i].name,
           "capital": this.countries[i].capital,
-          "url": "https://flagcdn.com/112x84/" + this.countries[i].code.toLowerCase() + ".png"
+          "url": `https://flagcdn.com/112x84/${this.countries[i].code.toLowerCase()}.png`
         })
     }
 

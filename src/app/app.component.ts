@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   state = inject(StateService)
   
   ngOnInit(): void {
+    console.log("appcomponent started")
     this.router.navigate(['/menu'])
   }
   
