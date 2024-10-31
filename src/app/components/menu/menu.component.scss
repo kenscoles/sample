@@ -1,3 +1,26 @@
+@import "../../../variables.scss";
+//
+//
+//
+// Breakpoints
+// _________________________________________________________________________________________
+//$mobileWidth: 585px;
+//
+//
+//
+// Styles
+// _________________________________________________________________________________________
+:host {
+  z-index: 1;
+ 
+  --breakpointForMobile: #{$mobileWidth};
+}
+
+
+h1, h2 {
+  color: $header-color;
+ }
+
 .navigation {
     display: flex;
     flex-flow: row wrap;
@@ -18,7 +41,7 @@
   .navigation a:hover {
     background: #1565C0;
   }
-  @media all and (max-width: 800px) {
+  @media (max-width: $mobileWidth) {
     .navigation {
       flex-flow: column wrap;
       padding: 0;
