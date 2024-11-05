@@ -1,25 +1,27 @@
-<mat-checkbox (change)="includeNegativeNumbers($event)">include negative numbers</mat-checkbox>
-<div class="instruction">
-  <!--  -->
-  @if(!correctOrder){
-  Sort these numbers into order (smallest at top to largest at bottom)
-  }
-  @else {
-  Well done!....
-  <button mat-raised-button color="primary" (click)="play()">Another go</button>
-  }
+<div class="col-3 col-s-3">
+  <div class="component">
+    <mat-checkbox color="primary" (change)="includeNegativeNumbers($event)">include negative numbers</mat-checkbox>
+    <div class="instruction">
+    
+      @if(!correctOrder){
+      Sort these numbers into order (smallest at top)
+      }
+      @else {
+      Well done!....
+      <button mat-raised-button color="primary" (click)="play()">Another go</button>
+      }
+    </div>
+  </div>
 </div>
-
-<!-- @if (correctOrder) {
-<div class="centre">
-  <button mat-raised-button color="primary" (click)="play()">Another go</button>
-  <br>
-</div> 
-} -->
-<div cdkDropList cdkDropListOrientation="vertical" class="example-list" (cdkDropListDropped)="drop($event)">
-  @for (number of original; track number) {
-  <div class="example-box" [style.background-color]="correctOrder ? 'gold' : 'pink'" cdkDrag>{{number}}</div>
-  }
-
-  <br>
+  
+<div class="col-9 col-s-9">
+  <div class="component">
+    <div cdkDropList cdkDropListOrientation="vertical" class="example-list" (cdkDropListDropped)="drop($event)">
+      @for (number of original; track number) {
+      <div class="example-box" [style.background-color]="correctOrder ? 'gold' : 'pink'" cdkDrag>{{number}}</div>
+      }
+    
+      <br>
+    </div>
+  </div>
 </div>

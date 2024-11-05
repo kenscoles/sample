@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .instruction {
   margin: auto;  
   text-align: center;
@@ -13,10 +16,10 @@
     margin-top: 10px;
 }
 .example-list {
-    width: 20%;
+    
+  width: 50%;
     align-content: center;
     max-width: 100%;
-    
     display: flex;
     margin:auto;
     flex-direction: column;
@@ -27,32 +30,27 @@
     padding: 10px 10px;
     color: rgba(0, 0, 0, 0.87);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content:center;
     width: 100%;
+    max-height: 40px;
     box-sizing: border-box;
     cursor: move;
-    background: white;
-    font-size:large; 
-    flex-grow: 1;
-    flex-basis: 0;
+    font-size:x-large; 
     margin-bottom: 2px;
     margin-top: 2px;
     border: solid blue;
+    border-radius: 25px;
 
   }
   /* On screens that are 700px wide or less*/
   @media all and (max-width: 700px){
     .example-list {
-      width: 30%;
+      width: 50%;
     }
   }
-  @media all and (max-width: 450px){
-    .example-list {
-      width: 40%;
-    }
-  }
+ 
   
   .cdk-drag-preview {
     box-sizing: border-box;
@@ -80,5 +78,71 @@
   .pic {
     display: flex;
   justify-content: center;
-  
   }
+  .component {
+    flex: 1 0 26%;
+    margin: 0;    
+    color: black;
+    padding: 15px;
+    text-align: left;
+    column-gap: 0px;
+    height: 70px;
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+    width: 100%;
+  }
+
+
+  /* For mobile phones: */
+
+
+@media only screen and (min-width: 400px) {
+  /* For tablets: */
+.component {
+  height: 400px;
+}
+.example-box {
+
+  max-height: 100px;
+  height: 100px;
+
+}
+.example-list {
+  width: 30%;
+  height: 500px;
+}  
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;} 
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 1000px) {
+  /* For desktop: */
+  .example-list {
+    width: 30%;
+  }
+ .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  p {font-size: 20pt;}
+}
