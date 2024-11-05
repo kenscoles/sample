@@ -10,13 +10,17 @@
     padding: 0;
     margin: 1px;
     list-style: none;
-    width: 60px;
+    width: 80px;
   }
-  
-  
-  @media only screen and (max-width: 1000px) {
+ 
+/* for desktop ie above 1000px width */
+  @media only screen and (min-width: 1000px) { 
     .flex-container{
-      width: 75px;
-    }  
+      width: 135px;
+    } 
+    table {
+      font-size: x-large;
+    }
+    tr { line-height: 30px; }
 /* for future use */    
 }

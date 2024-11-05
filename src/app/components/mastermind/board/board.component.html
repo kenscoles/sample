@@ -1,9 +1,10 @@
 <table>
   <tr>
-    <th>Tries</th>
+    <th>Try</th>
     <th colspan="4">Combination</th>
     <th>Result</th>
   </tr>
+  <tr></tr>
   <!-- iterate over all guesses -->
   @for (guess of board.guesses; track guess; let try = $index) {
   <tr>
@@ -15,8 +16,9 @@
     <td>{{guess.correct}}/{{guess.correctColors}}</td>
      -->
      @if(!guess.correct && !guess.correctColors){
-    no match
-     }
+  no match
+    }
+     
     <td class="flex-container">
       @for (i of guess.correct | fill; track i){ <!-- using FillPipe -->
       <li style="color:black">&#9899;</li>
