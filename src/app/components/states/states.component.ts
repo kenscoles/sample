@@ -4,13 +4,13 @@ import { UtilityService } from '../../shared/services/utility.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf, NgFor } from '@angular/common';
+
 @Component({
   selector: 'app-states',
   templateUrl: './states.component.html',
   styleUrls: ['./states.component.css'],
   standalone: true,
-  imports: [DragDropModule, MatButtonModule, NgIf, NgFor]
+  imports: [DragDropModule, MatButtonModule]
 })
 export class StatesComponent implements OnInit {
 

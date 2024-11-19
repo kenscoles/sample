@@ -90,13 +90,13 @@
     /* For larger than mobile phones: */
   @media only screen and (min-width: 400px) {
   .component {
-    height: 300px;
+    height: 270px;
+    padding: 0;
+    padding-left: 10px;
   }
-  .example-container {
-    
-  }
+ 
   .example-box {
-    max-height: 40px;
+    max-height: 30px;
     
     width:100%;
     
