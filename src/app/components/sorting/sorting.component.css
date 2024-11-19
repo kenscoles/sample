@@ -16,8 +16,7 @@
     margin-top: 10px;
 }
 .example-list {
-    
-  width: 50%;
+    width: 50%;
     align-content: center;
     max-width: 100%;
     display: flex;
@@ -44,13 +43,6 @@
     border-radius: 25px;
 
   }
-  /* On screens that are 700px wide or less*/
-  @media all and (max-width: 700px){
-    .example-list {
-      width: 50%;
-    }
-  }
- 
   
   .cdk-drag-preview {
     box-sizing: border-box;
@@ -80,13 +72,11 @@
   justify-content: center;
   }
   .component {
-    flex: 1 0 26%;
     margin: 0;    
     color: black;
     padding: 15px;
     text-align: left;
-    column-gap: 0px;
-    height: 70px;
+    height: 100%;
   }
 
   [class*="col-"] {
@@ -96,19 +86,14 @@
   }
 
 
-  /* For mobile phones: */
-
-
+  /* For larger than mobile phones: */
 @media only screen and (min-width: 400px) {
-  /* For tablets: */
 .component {
-  height: 400px;
+  height: 500px;
 }
 .example-box {
-
   max-height: 100px;
   height: 100px;
-
 }
 .example-list {
   width: 30%;

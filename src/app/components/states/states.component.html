@@ -1,36 +1,42 @@
-
-<div class="instruction">
-  @if(!correctOrder){ match the capitals with their state}
-  @else {Well done}
+<div class="col-3 col-s-3" style="background-color:rgb(221, 160, 160);">
+  <div class="component">
+    <div class="instruction">
+      @if(!correctOrder){ match the capitals with their state}
+      @else {Well done}
+    </div>
+    <br>
+    @if (correctOrder) {
+    <button class="centre" mat-raised-button color="primary" (click)="ngOnInit()">Play again</button>
+    }
+    @else {
+      <button class="centre" disabled color="primary" (click)="ngOnInit()">Play again</button>
+    }
+  </div>
 </div>
-  
-  <div class="centre">
+<!--  -->
+<div class="col-8 col-s-8" style="background-color: rgb(223, 213, 231);">
+  <div class="component">
     <div class="example-container">
       <h2>State</h2>
       <div cdkDropList #countriesList="cdkDropList" [cdkDropListData]="names" class="example-list"
         (cdkDropListDropped)="drop($event)">
         @for (item of names; track item) {
-  <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'"
-          cdkDrag>{{item.name}}</div>
-}
+        <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'" cdkDrag>{{item.name}}
+        </div>
+        }
       </div>
     </div>
-  
+
     <div class="example-container">
       <h2>Capital</h2>
       <div cdkDropList #capitalsList="cdkDropList" [cdkDropListData]="capitals" class="example-list"
         (cdkDropListDropped)="drop($event)">
         @for (item of capitals; track item) {
-  <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'"
-          cdkDrag>{{item.capital}}</div>
-}
+        <div class="example-box" [style.background-color]="correctOrder ? 'pink' : 'light-blue'" cdkDrag>
+          {{item.capital}}
+        </div>
+        }
       </div>
     </div>
   </div>
-  <div class="centre">
-    @if (correctOrder) {
-<button mat-raised-button color="primary" (click)="ngOnInit()">
-      Play again
-    </button>
-}
-    </div>
+</div>
