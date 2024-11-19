@@ -1,1 +1,0 @@
-import{_ as o,gb as e}from"./chunk-CUNKLJH3.js";var c=(()=>{class t{constructor(){this.showMenuButton=e(!1),this.mobile=e(!1),console.log("State Service started")}static{this.\u0275fac=function(r){return new(r||t)}}static{this.\u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{c as a};
