@@ -4,14 +4,13 @@ import { UtilityService } from '../../shared/services/utility.service';
 import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
-import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-sorting',
   templateUrl: './sorting.component.html',
   styleUrls: ['./sorting.component.css'],
   standalone: true,
-  imports: [DragDropModule, MatCheckboxModule, MatButtonModule, NgIf, NgFor]
+  imports: [DragDropModule, MatCheckboxModule, MatButtonModule]
 })
 export class SortingComponent implements OnInit{
 

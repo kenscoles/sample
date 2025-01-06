@@ -10,11 +10,7 @@
     width: 90%;
     height: 50px;
 }
-.centre {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
+
 .example-list {
     width: 50%;
     align-content: center;
@@ -74,22 +70,22 @@
   .component {
     margin: 0;    
     color: black;
-    padding: 15px;
+    padding: 10px;
     text-align: left;
     height: 100%;
   }
 
   [class*="col-"] {
     float: left;
-    padding: 15px;
+    padding: 5px;
     width: 100%;
   }
 
 
-  /* For larger than mobile phones: */
+  /* For larger than mobile phones */
 @media only screen and (min-width: 400px) {
 .component {
-  height: 500px;
+  height: 100vh;
 }
 .example-box {
   max-height: 100px;
@@ -97,7 +93,7 @@
 }
 .example-list {
   width: 30%;
-  height: 500px;
+  height: 600px;
 }  
   .col-s-1 {width: 8.33%;}
   .col-s-2 {width: 16.66%;}
@@ -114,8 +110,13 @@
 }
 @media only screen and (min-width: 1000px) {
   /* For desktop: */
+  .component {
+    height: 100vh;
+  }
+  
+
   .example-list {
-    width: 30%;
+    width: 40%;
   }
  .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { UtilityService } from '../../shared/services/utility.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {NgIf, NgFor} from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'
@@ -14,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select'
   styleUrls: ['./capitals.component.css'],
   standalone:true,
   imports: [MatButtonModule, MatInputModule, MatSelectModule,
-     DragDropModule, NgIf, NgFor]
+     DragDropModule]
 })
 export class CapitalsComponent implements OnInit {
 

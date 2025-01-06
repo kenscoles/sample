@@ -3,14 +3,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../../shared/services/utility.service';
-import { NgIf, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-spelling',
   templateUrl: './spelling.component.html',
   styleUrls: ['./spelling.component.css'],
   standalone: true,
-  imports: [DragDropModule, MatButtonModule, NgIf, NgFor]
+  imports: [DragDropModule, MatButtonModule]
 })
 export class SpellingComponent implements OnInit {
   correctOrder: boolean = false;
