@@ -54,6 +54,11 @@ export const APP_ROUTES: Routes = [
                 path: 'states', title: 'states',
                 loadComponent: () => import('./components/states/states.component').then(c => c.StatesComponent)
 
+            },
+            {
+                path: 'novels', title: 'novels',
+                loadComponent: () => import('./components/novels/novels.component').then(c => c.NovelsComponent)
+
             }
         ]
     }

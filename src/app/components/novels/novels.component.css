@@ -1,0 +1,72 @@
+/* Header/logo Title */
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+  }
+
+  @media (min-width: 600px) {      /* minimum screen size  600px -------start---------*/
+  .header {
+    font-size: 2rem;
+  }
+}
+/* Create the container / set the containment context */
+ .card-wrapper-container {
+    container-type: inline-size;
+    container-name: grandParent;
+  }
+ 
+  .card-wrapper {
+    display: grid;
+    background-color: rgb(182, 143, 143);
+    /* border: 5px solid black; */
+    padding: 20px;
+    grid-gap: 1rem;
+  }
+ 
+  .card {
+    text-align: center;
+    background-color: aquamarine;
+    /* border: solid red; */
+    padding: 20px;
+    min-height: 4rem;
+  }
+  .card__title {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+ 
+  /* Define the container query using @container */
+  /* The rule below says: find the closest ancestor with a
+  containment context 
+ - in this case "card-wrapper-container" -
+ and when the width is 560 pixels and above, 
+ set the grid columns to 3 */
+  @container grandParent (min-width: 560px) {
+ 
+    .card-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @container grandParent (min-width: 800px) {
+    
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @container grandParent (min-width: 1200px) {
+
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+   .card {
+    min-height: 7rem;
+   }
+    .card__title {
+        font-size: 1.2rem;
+      }
+      
+  }

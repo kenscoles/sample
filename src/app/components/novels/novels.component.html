@@ -1,0 +1,16 @@
+<div class="header">
+    <p>Dorothy L Sayers</p>
+    <p>Lord Peter Wimsey novels in chronological order</p>
+    <img class="card__image" src="peterwimsey.jpg" width="100px" alt="">
+</div>
+
+<div class="card-wrapper-container"> <!-- grandParent -->
+    <div class="card-wrapper"> <!-- parent -->
+        @for (item of novels; track item) {
+            <article class="card">     
+                <p class="card__title">{{item.title}}</p>
+                <p class="card__title" >{{item.published}}</p>
+            </article>
+          }  
+    </div> <!--end of card-wrapper-->
+</div> <!--end of card-wrapper-container-->
