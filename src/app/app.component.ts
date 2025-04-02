@@ -14,7 +14,9 @@ export class AppComponent implements OnInit {
   
   constructor(private router:Router){}
 
-  state = inject(StateService)
+// 
+// 
+state = inject(StateService)
   
   ngOnInit(): void {
     console.log("appcomponent started")

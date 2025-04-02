@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { StateService } from 'src/app/shared/services/state.service';
 
 @Component({
   selector: 'app-novels',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './novels.component.css'
 })
 export class NovelsComponent {
+ state = inject(StateService)
+ 
   novels = [
     { title: 'Whose Body?', published: '1923'},
     { title: 'Clouds of Witness', published: '1926'},

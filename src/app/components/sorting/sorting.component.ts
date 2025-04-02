@@ -1,9 +1,10 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UtilityService } from '../../shared/services/utility.service';
 import { MatCheckboxModule, MatCheckboxChange } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
+import { StateService } from 'src/app/shared/services/state.service';
 
 @Component({
   selector: 'app-sorting',
@@ -17,9 +18,10 @@ export class SortingComponent implements OnInit{
   constructor (private util : UtilityService) { }
 
   ngOnInit(): void {
+  this.state.test.set("changed by sorting comp")  
   this.play();
 }
-
+state = inject(StateService)
 //
 correctOrder=false;
 myNums:number[] = [];
