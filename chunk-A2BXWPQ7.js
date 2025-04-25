@@ -1,1 +1,0 @@
-import{Ba as e,Z as o}from"./chunk-YP2UULN3.js";var c=(()=>{class t{constructor(){this.showMenuButton=e(!1),this.mobile=e(!1),this.test=e("test signal"),console.log("State Service started")}static{this.\u0275fac=function(s){return new(s||t)}}static{this.\u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})}}return t})();export{c as a};
