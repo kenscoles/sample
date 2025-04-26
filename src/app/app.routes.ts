@@ -59,6 +59,11 @@ export const APP_ROUTES: Routes = [
                 path: 'novels', title: 'novels',
                 loadComponent: () => import('./components/novels/novels.component').then(c => c.NovelsComponent)
 
+            },
+            {
+                path: 'country', title: 'country',
+                loadComponent: () => import('./components/country/country.component').then(c => c.CountryComponent)
+
             }
         ]
     }

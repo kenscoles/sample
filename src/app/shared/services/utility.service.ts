@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { effect, Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -74,4 +74,28 @@ var myArray = ['a','b','c','d','e'];
     }
     return result;
   }
+  
+}
+export function debouncedSignal<T>(
+  sourceSignal: Signal<T>, debounceTimeInMs = 500): Signal<T> {
+  const debounceSignal = signal(sourceSignal());
+  effect(
+    (onCleanup) => {
+      const value = sourceSignal();
+      const timeout = setTimeout(
+        () => debounceSignal.set(value),
+        debounceTimeInMs
+      );
+
+      // The `onCleanup` argument is a function which is called when the effect
+      // runs again (and when it is destroyed).
+      // By clearing the timeout here we achieve proper debouncing.
+      // See https://angular.io/guide/signals#effect-cleanup-functions
+      onCleanup(() => {
+        clearTimeout(timeout);
+        //console.log("cleanup ran")
+      });
+    }
+  );
+  return debounceSignal;
 }
