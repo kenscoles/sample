@@ -12,82 +12,14 @@ import { myCode } from '../../country.interface';
 import { countryAdapter } from '../../country.adapter';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-country',
   imports: [ CommonModule, FormsModule, MatInputModule, MatButtonModule,
     MatFormFieldModule, MatSelectModule, MatCheckboxModule],
-  template: `
-  <div class="container">
-<mat-form-field>
-<mat-label>enter code</mat-label>      
-<input matInput [ngModel]="chosenCode()" (ngModelChange)="chosenCode.set($any($event))">
-</mat-form-field>
-<mat-form-field>
-    <mat-label>pick a country</mat-label>
-    <mat-select  [(ngModel)]="selectedValue" (ngModelChange)=" this.chosenCode.set(this.selectedValue)" name="code">
-      @for (item of result; track item.code) {
-        <mat-option [value]="item.code">{{item.name}}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
-</div>
-<div style="display: inline">
-    <div style="width:70%; display: inline-block; float:left; margin-left: 10px; margin-right: 10px;">
-   @if(country.isLoading()) {
-    <h3>Loading ... please wait</h3>
-   }
-    @if(country.hasValue()){
-@let data = countryData();
-<h2>Name: common - {{data.name.common}} <!-- data works -->
-native - {{data.name.native}}</h2>
-<h2>Capital: {{data.capital.join(", ")}}</h2>
-<h2>Independent: @if(data.independent) {YES} @else {NO}
-Population: {{data.population | number}}</h2>
-<h2>Car: {{data.car.side}} </h2>
-
-<h2>Currency: {{data.currency.name}} ( {{data.currency.symbol}} )</h2>
-<h2>Timezone(s): {{data.timezones.join(", ")}}</h2>
-@if(data.borders) {
-<h2>Border(s): {{data.borders.join(", ")}}</h2>
-}
-<h2>Language(s): {{data.langs.join(", ")}}</h2>
-<p>
-
-} @if(!country.isLoading() && !country.hasValue()) {
-  <h3>No country found with this code</h3>
-}
-
-    </div>
-    <div style="width: 25%; display: inline-block;">
-    @if(country.hasValue()){
-    <img class="flag" [src]="countryData().flags.svg" />
-   
-    }  
-  </div>
-</div>
-
-
-  `,
-  styles: `
-  img {
-    border: 2px solid;
-    margin: 5px;
-    width: 30%}
-
-  .container{
-    margin: 10px;
-    width:40%;
-    background-color:light-yellow;
-  } 
-  .flag {
-    width: 100%;
-  }
-  
-  `
+  templateUrl: './country.component.html',
+  styleUrl: './country.component.css'
 })
 export class CountryComponent {
-
   code = signal("GB")
   chosenCode = signal('GB');
   debounceSearchValue = debouncedSignal(this.chosenCode, 2000); // default is 500
@@ -124,7 +56,4 @@ export class CountryComponent {
       this.code.set(this.debounceSearchValue())
     })
   }
-
-
-
 }
