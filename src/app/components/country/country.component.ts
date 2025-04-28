@@ -37,7 +37,6 @@ export class CountryComponent {
     effect(() => {
       if (this.country.hasValue()) {
         //console.log("original: ", this.country.value())
-        
         const processedData = countryAdapter(this.country.value()[0]) // process the REST api data
         this.countryData.set(processedData)
         //console.log("processed: ", processedData)
