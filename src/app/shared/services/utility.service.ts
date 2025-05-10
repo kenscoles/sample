@@ -43,7 +43,7 @@ export class UtilityService {
   }
   // sorts an array of objects
   objsort(obj: any[], prop: string | number, isAsc: 'asc' | 'desc') {
-    console.log('ok')
+    //console.log('ok')
     return obj.sort((a, b) => a[prop].toString().localeCompare(b[prop])
      * (isAsc === "asc" ? 1 : -1));
   }

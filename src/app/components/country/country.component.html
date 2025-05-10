@@ -2,7 +2,7 @@
     <div class="columnLeft">
         <mat-form-field style="width:100px">
             <mat-label>enter code</mat-label>
-            <input matInput [ngModel]="chosenCode()" (ngModelChange)="chosenCode.set($any($event))">
+            <input matInput [ngModel]="chosenCode()" (ngModelChange)="chosenCode.set($any($event)); selectedValue=$event.toUpperCase()">
         </mat-form-field>
         <div class="divider"></div>
         <mat-form-field >
@@ -18,7 +18,10 @@
             @if(country.isLoading()) {
         <h3>Loading ... please wait</h3>
         }
-        @if(country.hasValue()){
+        @if(!country.isLoading() && !country.hasValue()) {
+            <h3>No country found with this code</h3>
+          }
+        @if(country.hasValue() && codes.hasValue()){
         @let data = countryData();
         <h2>{{data.name.common}}
         @if(data.name.common !== data.name.native){
@@ -39,7 +42,7 @@
 
     </div>
     <div class="columnRight">
-        @if(country.hasValue()){
+        @if(country.hasValue() && countryData()){
         <img class="flag" [src]="countryData().flags.svg" />
 
         }
